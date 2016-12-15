@@ -1,0 +1,9 @@
+---
+- name: dp console
+  hosts: all
+  user: root
+  become: true
+  roles:
+  - dp-console
+  vars_files:
+  - vars/dp-console.yml

@@ -1,0 +1,6 @@
+---
+- include: install.yml
+  tags: dp_console_install
+
+- include: update.yml
+  tags: dp_console_update

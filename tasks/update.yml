@@ -1,0 +1,6 @@
+---
+- name: update drupal to latest version (if configured)
+  shell: "php {{ drupal_console_path }} self-update"
+  register: drupal_console_update
+  changed_when: "'console has been updated' in drupal_console_update.stdout"
+  when: drupal_console_keep_updated

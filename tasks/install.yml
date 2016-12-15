@@ -1,0 +1,13 @@
+---
+- name: install drupal console
+  get_url: url=https://drupalconsole.com/installer
+           dest="{{ drupal_console_path }}"
+
+
+- name: ensure drupal console is executable
+  file: path="{{ drupal_console_path }}"
+        mode=0755
+
+
+- name: run drupal console init
+  shell: php {{ drupal_console_path }} init creates={{ drupal_console_config }}
